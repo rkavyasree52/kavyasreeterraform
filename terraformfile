@@ -1,0 +1,11 @@
+node {
+    stage('init') {
+    label: 'Initialize  Terraform', script: "terraform init"
+    }
+    stage('plan') {
+    sh label: 'Plan Terraform', script: "terraform plan"
+    }
+    stage('apply') {
+    sh label: 'Deploy Infrastructure', script: "terraform apply"
+  }
+} 
